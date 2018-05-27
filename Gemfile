@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
+gem 'mini_magick', '~> 4.8'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -61,10 +61,17 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+#認証機能(login,logout)が簡単にできる
 gem 'devise'
+# cssのフレームワーク
 gem 'bulma-rails'
+# bootstrapで管理画面を作るのに必要
 gem 'simple_form'
+# 非同期処理をするのに必要
+# (リクエストが返ってくるまでに数秒以上もかかる場合、中の処理が完了した段階で呼び出し元に通知する)
 gem 'sidekiq'
+# クレジットカード決済を利用する際に必要
+gem 'stripe', '~> 3.13'
 group :development, :test do
   gem 'better_errors'
   gem 'guard'
